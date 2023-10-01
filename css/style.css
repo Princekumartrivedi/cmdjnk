@@ -1,0 +1,122 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: aliceblue;
+    word-wrap: wrap;
+}
+
+/* default css */
+:root {
+    --data-bgcolor: #46524e;
+    --data-pri-color: #ffc800;
+    --data-default-font: 'Roboto', sans-serif;
+    --data-pri-font: 'Dosis';
+    --data-white: white;
+    --data-black: #222222;
+}
+
+.spacer {
+    padding: 85px 0;
+}
+
+.catagory_bg {
+    background-color: var(--data-bgcolor);
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+    color: var(--data-white);
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--data-pri-font);
+    margin: 0;
+}
+
+/* other css */
+
+.ima_box img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.content h1 {
+    font-size: 36px;
+    color: var(--data-white);
+    text-transform: uppercase;
+}
+
+
+.info {
+    background-color: var(--data-white);
+    z-index: 0;
+    padding: 40px 30px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.info p {
+    color: #666666;
+}
+
+.info h3 {
+    text-transform: uppercase;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.info::after {
+    content: '';
+    width: 100%;
+    height: 5%;
+    background-color: var(--data-pri-color);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    z-index: -1;
+    transition: all 400ms ease-in-out;
+}
+
+.info::before {
+    content: '+';
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    font: 400 36px/38px 'Roboto', sans-serif;
+    background-color: var(--data-white);
+    border: 2px solid var(--data-black);
+    position: absolute;
+    top: 0;
+    right: 20px;
+    bottom: 0;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+    transition: all 400ms ease-in-out;
+}
+
+.ima_box:hover .info::after {
+    height: 100%;
+}
+
+.ima_box:hover .info::before {
+    background-color: var(--data-black);
+    color: var(--data-white);
+}
